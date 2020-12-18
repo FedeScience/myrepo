@@ -6,3 +6,4 @@ sudo apt install curl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 nvm install --lts
 npm install --global gatsby-cli
+gatsby new my-first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-default
