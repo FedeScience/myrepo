@@ -6,13 +6,13 @@
 # get all caret models for regression
 
 require(caret)
-modNames <- unique(modelLookup()[modelLookup()$forReg,c(1)])
-length(modNames); modNames;
+modNamesforReg <- unique(modelLookup()[modelLookup()$forReg,c(1)])
+length(modNamesforReg); modNamesforReg;
 
 # -----------------------------------------------------------
 # get all caret models for classification
 
 require(caret)
-modNames <- unique(modelLookup()[modelLookup()$forClass,c(1)])
-length(modNames); modNames
+modNamesforClass <- unique(modelLookup()[modelLookup()$forClass,c(1)])
+length(modNamesforClass); modNamesforClass
  
