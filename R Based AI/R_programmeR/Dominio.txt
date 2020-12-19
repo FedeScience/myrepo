@@ -1,0 +1,77 @@
+#@ https://www.hostingtalk.it/estensioni-e-domini-quali-contano-veramente-analisi-delle-giuste-registrazioni_-c000000rG/
+Se il nome di un dominio è composto da due o più nomi, tutti separati da un punto, il dominio si dice essere di livello terzo, quarto, quinto etc…, in tal caso si parla di sottodomini.
+
+Ad esempio  providers.hostingtalk.it è un dominio di terzo livello o anche un sottodominio, mentre il dominio vero e proprio resta hostingtalk.it
+
+    estensioni geografiche per esempio un .fr, .de, .co, .uk o .it., ~ con soggetto registrante differente dal soggetto assegnatario del dominio, fa perdere in parte attrattiva alle estensioni geografiche
+
+estensioni generiche sono .COM, .NET e .BIZ + TLD generica per l’Europa, .EU, pensata per tutte le Aziende, Organizzazioni o Soggetti Privati (Persone Fisiche) operanti sul territorio Europeo, senza particolari vincoli o restrizioni
+   per quei soggetti  che vogliono marcare l’identità ad es italiana o il collegamento con un dato paese ad es. l’Italia (.it). Inoltre alcune estensioni geografiche come .it e .eu permettono al proprietario del Dominio di poter effettuare la migrazione verso altro Provider di hosting con o senza il coinvolgimento del Provider che si sta lasciando (e quindi poter cambiare gestore in piena autonomia).
+   
+   
+   estensioni specifiche .GOV che possono essere scelte solo da istituzioni pubbliche, i .EDU che possono essere acquistate solo da scuole, università, organizzazioni culturali, ecc
+    
+    
+    
+#@ https://www.loginstudio.com/articoli/significato-delle-estensioni-di-dominio-1134.aspx
+Dominio .com
+Tipologia di dominio aperto a qualsiasi persona o entità. Chiunque può registrare nomi a dominio con questa estensione.
+In genere l'estensione .com suggerisce la presenza di un sito web commerciale. Pertanto è particolarmente consigliato a società ditte o aziende che si affacciano su mercati nazionali e internazionali.
+
+Dominio .it
+La registrazione è permessa a privati, aziende e organizzazioni con residenza in uno stato dell'Unione europea, previo invio di richiesta ad un Registrar accreditato dal Registro.it.
+Il dominio di tipo .it è consigliato a privati e ad aziende europee che vogliono marcare l'identità italiana o il collegamento con l'Italia.
+
+Dominio .net
+TLD aperto a qualsiasi persona o entità. E' permessa la registrazione, senza vincoli politici o commerciali. In genere il dominio di tipo .net (network) è consigliato a privati o aziende quando il .com non è più disponibile. Questa estensione di dominio fu creata in origine dalle autorità telematiche USA per aziende operanti nel settore delle reti e delle telecomunicazioni. Successivamente furono tolte tali restrinzioni.
+
+Dominio .org
+Anche il dominio .org è un TLD aperto a qualsiasi persona o entità ed è permessa la registrazione, senza vincoli politici o commerciali. In genere il dominio di tipo .org (organizzazione) è consigliato ad organizzazioni non a scopo di lucro, siti personali, progetti open source, enti commerciali.
+
+Dominio .biz
+Tipologia di dominio aperta a qualsiasi persona o entità, senza vincoli politici o commerciali. Comunemente il dominio di tipo .biz è richiesto quando il .com e il .net non sono più disponibili per un determinato nome di secondo livello. In genere è indicato per siti web commerciali (biz = businesses).
+
+Dominio .info
+Tipologia di dominio senza restrinzioni, politici, geografici o commerciali. Generalmente il dominio di tipo .info è richiesto per siti web di informazione e news, sebbene possa essere utilizzato anche per siti web personali o aziendali.
+
+Dominio .name
+Questo dominio è stato progettato per siti web personali, e dovrebbe avere la struttura nome.cognome.name, ma attualmente la struttura del dominio è libera (sebbene riservata solo a persone fisiche). Pertanto è possibile registrare qualsiasi nome a dominio libero con estensione .name.
+
+Dominio .eu
+Il registro dei nomi a dominio .eu è tenuto dall'EURid. Gli individui, le aziende o le organizzazioni che vogliono registrare questa tipologia di dominio devono risiedere o avere sede nell'UE.
+
+Dominio .us
+Dominio di primo livello nazionale (ccTLD) assegnato agli Stati Uniti d'America.
+Persone, aziende od organizzazioni che vogliono registrare questa tipologia di dominio devono risiedere o avere sede legale negli USA.
+
+
+#@ https://www.multiwebnegozi.com/2017/08/30/it-com-org-eu-net-etc-cosa-significano/
+“.it” indica un dominio per privati e aziende appartenenti al territorio europeo e che intendono enfatizzare il legame con l’Italia e l’essere italiani.
+
+“.org” è più indirizzata a organizzazioni non a scopo di lucro, siti personali, associazioni no profit. Non implica vincoli politici o commerciali.
+
+“.net” è nata negli USA per le aziende che si occupavano di reti e telecomunicazioni. Poi è stata utilizzata anche in altri settori. Attualmente viene usata da aziende e privati, quando per uno specifico nome non è più disponibile il “.com “.
+
+“.biz” viene utilizzata quando per un determinato nome non sono più disponibili le estensioni “.com” e “.net”. Non implica vincoli politici o commerciali.
+
+“.info” non implica costrizioni politiche, commerciali o territoriali. Viene utilizzata per siti web finalizzati alla divulgazione di informazioni e notizie.
+
+“.eu” può essere utilizzata solo da persone, organizzazioni e aziende che hanno sede nell’Unione Europea.
+
+#@ https://it.semrush.com/blog/nuove-estensioni-dominio-quali-sono-come-le-legge-google/
+
+    Sei un fotografo professionista e vuoi aprire il tuo blog? L'estensione .PHOTOGRAPHY è quella che fa al caso tuo.
+    Sei il titolare di una galleria d'arte? Perché non optare per il .ART per il tuo sito vetrina?
+    Agenzia di comunicazione in cerca di clienti? Punta sul .AGENCY. 
+    Lavori nell'ambito del Social Media Marketing? Bene, allora con il .SOCIAL sarai in grado di far emergere subito il tuo sito nel tuo settore professionale.
+    Sei un imprenditore e vuoi creare un sito eCommerce per vendere i tuoi prodotti direttamente online? Opzioni come il .STORE o il .SHOP potrebbero fare al caso tuo. 
+
+
+Questo per quel che riguarda la cosiddetta SEM, nel quale possiamo notare come (con il passare degli anni) i nuovi gTLD abbiano rosicchiato pian piano dei punti percentuale in più per quel che riguarda il tasso di conversione.
+
+Per quel che riguarda invece il traffico organico, cuore pulsante della disciplina conosciuta come SEO, mister Hartzer suggerisce che (contrariamente a quanto hanno sempre sostenuto molti SEO Specialist) le nuove estensioni non portino nessuno svantaggio e, anzi, potrebbero alla lunga dare anche qualche beneficio.
+
+
+LIVE_CHAT
+#@ https://www.register.it/company/
+avete un listino con prezzo medio per Dominio.Sottodominio.Category.Nazione ?

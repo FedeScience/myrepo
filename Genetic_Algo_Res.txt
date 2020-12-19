@@ -1,0 +1,58 @@
+Pool Size: 6          Repro Rate: 30     Mutate Rate: 75
+Return Rate: 40       Best Fits: 4       Num Mutations: 1
+Churn Rate: 4/6       Run for 300 seconds
+Target String:   >>> Hello, World! <<< 
+
+>>>    0   Generation: 0        ( 248 to 430 )   Prodigy: > Aef1MrRmrjf9= < with a score of 248
+>>>    0   Generation: 4        ( 221 to 342 )   Prodigy: > 8emjw4l1Jmn^9 < with a score of 221
+>>>    0   Generation: 7        ( 169 to 437 )   Prodigy: > Aymjw+l1JTcgv < with a score of 169
+>>>    1   Generation: 12       ( 161 to 314 )   Prodigy: > Aymjw+;1JTcgv < with a score of 161
+>>>    1   Generation: 27       ( 128 to 364 )   Prodigy: > AImjw+;1JTcgv < with a score of 128
+>>>    1   Generation: 32       ( 116 to 319 )   Prodigy: > AImjT+;1mPcgv < with a score of 116
+>>>    1   Generation: 37       ( 104 to 327 )   Prodigy: > GImjT+;1mPcgv < with a score of 104
+>>>    1   Generation: 43        ( 97 to 320 )   Prodigy: > GImjT+;umPcgv < with a score of 97
+>>>    1   Generation: 45        ( 88 to 359 )   Prodigy: > GImjT+;umPcg  < with a score of 88
+>>>    1   Generation: 67        ( 86 to 291 )   Prodigy: > GImtT+#umPcg  < with a score of 86
+>>>    1   Generation: 71        ( 84 to 294 )   Prodigy: > GImtT+#umTcg  < with a score of 84
+>>>    1   Generation: 72        ( 82 to 296 )   Prodigy: > GImtT+#unTcg  < with a score of 82
+>>>    1   Generation: 84        ( 80 to 317 )   Prodigy: > GImtT+#unTcCz < with a score of 80
+>>>    1   Generation: 94        ( 73 to 396 )   Prodigy: > GImtn+#unTcCz < with a score of 73
+>>>    1   Generation: 117       ( 60 to 315 )   Prodigy: > GImKn+#unTcCz < with a score of 60
+>>>    1   Generation: 178       ( 59 to 309 )   Prodigy: > GImKn+#unqcCz < with a score of 59
+>>>    1   Generation: 185       ( 58 to 351 )   Prodigy: > GImKn+XunqcCz < with a score of 58
+>>>    2   Generation: 193       ( 51 to 294 )   Prodigy: > GImKn+XunqGCz < with a score of 51
+>>>    2   Generation: 208       ( 47 to 401 )   Prodigy: > GImKn+XunqPCz < with a score of 47
+>>>    2   Generation: 255       ( 46 to 404 )   Prodigy: > GImKn+XunSPCz < with a score of 46
+>>>    2   Generation: 258       ( 45 to 301 )   Prodigy: > jImKn+XWnrPCz < with a score of 45
+>>>    2   Generation: 335       ( 43 to 448 )   Prodigy: > fImKn+XWnrPCz < with a score of 43
+>>>    3   Generation: 387       ( 37 to 370 )   Prodigy: > fDmKn+XWnrPC@ < with a score of 37
+>>>    3   Generation: 414       ( 36 to 480 )   Prodigy: > fDmKn+XWnrPe@ < with a score of 36
+>>>    3   Generation: 485       ( 34 to 359 )   Prodigy: > fDmKn;XWnrPe@ < with a score of 34
+>>>    3   Generation: 495       ( 33 to 322 )   Prodigy: > fDmKn;XWnrPE@ < with a score of 33
+>>>    4   Generation: 576       ( 31 to 330 )   Prodigy: > fDmKn;YWnrPE@ < with a score of 31
+>>>    4   Generation: 594       ( 29 to 452 )   Prodigy: > fDmKn;YWnrOE@ < with a score of 29
+>>>    5   Generation: 713       ( 26 to 432 )   Prodigy: > HDmKn;YWnrOE@ < with a score of 26
+>>>    5   Generation: 724       ( 22 to 391 )   Prodigy: > HDmKn; WnrOE@ < with a score of 22
+>>>    5   Generation: 738       ( 19 to 406 )   Prodigy: > HemKn; WnrOE@ < with a score of 19
+>>>    7   Generation: 1138      ( 18 to 340 )   Prodigy: > HemKn; WnrnE@ < with a score of 18
+>>>    8   Generation: 1223      ( 17 to 350 )   Prodigy: > HemKn; WNrnE! < with a score of 17
+>>>    9   Generation: 1486      ( 15 to 294 )   Prodigy: > HemKo; WNrnE! < with a score of 15
+>>>    9   Generation: 1510      ( 14 to 347 )   Prodigy: > HemKo; WNrNE! < with a score of 14
+>>>   10   Generation: 1671      ( 13 to 252 )   Prodigy: > HeLKo; WNrNE! < with a score of 13
+>>>   10   Generation: 1692      ( 12 to 326 )   Prodigy: > HeLKo; WNrNd! < with a score of 12
+>>>   12   Generation: 1924      ( 11 to 405 )   Prodigy: > HeLKo. WNrNd! < with a score of 11
+>>>   12   Generation: 2058       ( 9 to 325 )   Prodigy: > HeLKo. WPrNd! < with a score of 9
+>>>   14   Generation: 2352       ( 8 to 433 )   Prodigy: > HeLKo. WorNd! < with a score of 8
+>>>   16   Generation: 2591       ( 7 to 274 )   Prodigy: > HeLKo, WorNd! < with a score of 7
+>>>   16   Generation: 2712       ( 6 to 294 )   Prodigy: > HelKo, WorNd! < with a score of 6
+>>>   18   Generation: 2924       ( 4 to 335 )   Prodigy: > HelKo, WorMd! < with a score of 4
+>>>   18   Generation: 3042       ( 2 to 321 )   Prodigy: > HelMo, WorMd! < with a score of 2
+>>>   21   Generation: 3562       ( 1 to 475 )   Prodigy: > Hello, WorMd! < with a score of 1
+>>>   44   Generation: 7354       ( 0 to 401 )   Prodigy: > Hello, World! < with a score of 0
+>>>   44   Generation: 7354       ( 0 to 401 )   Prodigy: > Hello, World! < with a score of 0
+
+
+
+Match found in Generation 7354 
+
+
