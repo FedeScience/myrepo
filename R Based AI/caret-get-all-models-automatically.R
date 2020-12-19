@@ -14,5 +14,5 @@ length(modNames); modNames;
 
 require(caret)
 modNames <- unique(modelLookup()[modelLookup()$forClass,c(1)])
-length(modNames); modNames;
+length(modNames); modNames
  
