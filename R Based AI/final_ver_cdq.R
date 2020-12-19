@@ -150,6 +150,3 @@ data_profile=function (data,top_n=5, numeric.cutoff = -1,datetime_format=NULL,nu
   }
 }
 
- 
-
-
