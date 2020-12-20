@@ -4,18 +4,18 @@ tag <- read.csv("R Based AI/Supervised/tag_data.csv", row.names = 1)
 tag <- as.matrix(tag)
 
 ## Select only models for regression
-classModels <- tag[tag[,"Classification"] == 1,]
-all <- 1:nrow(regModels)
+clasModels <- tag[tag[,"Classification"] == 1,]
+all <- 1:nrow(clasModels)
 
 ## Seed the analysis with the SVM model
-start <- grep("(svmRadial)", rownames(classModels), fixed = TRUE)
-pool <- all[all != start]
+startclasModels <- grep("(svmRadial)", rownames(clasModels), fixed = TRUE)
+pool <- all[all != startclasModels]
 
 ## Select 4 model models by maximizing the Jaccard
 ## dissimilarity between sets of models
-nextMods <- maxDissim(classModels[start,,drop = FALSE], 
-                      classModels[pool, ], 
+nextModsClas <- maxDissim(clasModels[startclasModels,,drop = FALSE], 
+                      clasModels[pool, ], 
                       method = "Jaccard",
                       n = 4)
 
-rownames(classModels)[c(start, nextMods)]
+rownames(clasModels)[c(startclasModels, nextModsClas)]
