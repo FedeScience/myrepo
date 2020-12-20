@@ -95,22 +95,22 @@ df1
 # ggplot(t2[[1]])
 
 # call web output with correct column names
-datatable(df1,  options = list(
-  columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
-  pageLength = MAX,
-  order = list(list(2, 'desc'))),
-  colnames = c('Num', 'Name', 'Accuracy', 'Kappa', 'time [s]', 'Model name'),
-  caption = paste('Classification results from caret models',Sys.time()),
-  class = 'cell-border stripe')  %>% 	       
-  formatRound('x2', 3) %>%  
-  formatRound('x3', 3) %>%
-  formatRound('x4', 3) %>%
-  formatStyle(2,
-              background = styleColorBar(x2, 'steelblue'),
-              backgroundSize = '100% 90%',
-              backgroundRepeat = 'no-repeat',
-              backgroundPosition = 'center'
-  )
+# datatable(df1,  options = list(
+#   columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
+#   pageLength = MAX,
+#   order = list(list(2, 'desc'))),
+#   colnames = c('Num', 'Name', 'Accuracy', 'Kappa', 'time [s]', 'Model name'),
+#   caption = paste('Classification results from caret models',Sys.time()),
+#   class = 'cell-border stripe')  %>% 	       
+#   formatRound('x2', 3) %>%  
+#   formatRound('x3', 3) %>%
+#   formatRound('x4', 3) %>%
+#   formatStyle(2,
+#               background = styleColorBar(x2, 'steelblue'),
+#               backgroundSize = '100% 90%',
+#               backgroundRepeat = 'no-repeat',
+#               backgroundPosition = 'center'
+#   )
 
 # print confusion matrix example
 caret::confusionMatrix(t2[[1]])
