@@ -10,11 +10,15 @@ data(iris)
 
 # slow classification models ("rbf" crashes; "dwdLinear", "ownn", "snn" have issues)
 # all others may have just failed and are not listed here
-removeModels <- c("AdaBoost.M1","pda2","dwdRadial","rbf","dwdLinear", "dwdPoly",
-                  "gaussprLinear","gaussprPoly","rFerns","sddaLDA", "smda", "sddaQDA", "xgbLinear")
+ToFixModels <- c("AdaBoost.M1","pda2","dwdRadial","rbf","dwdLinear", "dwdPoly",
+                  "gaussprLinear","gaussprPoly","rFerns","sddaLDA", "smda", "sddaQDA",
+                  "xgbLinear", "mlpKerasDropout", "bartMachine", "blackboost", "bag",
+                  "elm", "extraTrees", "gamboost", "glmboost", "glm", "gbm_h2o" ,
+                  "logreg", "mlpKerasDecay", "plsRglm", "nodeHarvest", "glmnet_h2o",
+                  "glmStepAIC", "msaenet")
 
 #remove all slow and failed models from model list
-m <- m[!m %in% removeModels]
+m <- m[!m %in% ToFixModels]
 
 # pre-load all packages (does not really work due to other dependencies)
 suppressPackageStartupMessages(ll <-lapply(m, require, character.only = TRUE))
