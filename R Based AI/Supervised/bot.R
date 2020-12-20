@@ -16,7 +16,7 @@ ToFixModels <- c("AdaBoost.M1","pda2","dwdRadial","rbf","dwdLinear", "dwdPoly",
                  "elm", "extraTrees", "gamboost", "glmboost", "glm", "gbm_h2o" ,
                  "logreg", "mlpKerasDecay", "plsRglm", "nodeHarvest", "glmnet_h2o",
                  "glmStepAIC", "msaenet", "logicBag", "mlpSGD", "mxnet", "mxnetAdam",
-                 "null", "randomGLM")
+                 "null", "randomGLM", "xgbDART", "bam")
 
 #remove all slow and failed models from model list
 (m <- m[!m %in% ToFixModels])
