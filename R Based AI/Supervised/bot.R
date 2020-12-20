@@ -4,9 +4,9 @@ require(mlbench)
 require(DT)
 
 data(iris) 
-(cla <- unique(modelLookup()[modelLookup()$forClass,c(1)]))
-(reg <- unique(modelLookup()[modelLookup()$forReg,c(1)]))
-(m <- intersect(cla,reg))
+cla <- unique(modelLookup()[modelLookup()$forClass,c(1)])
+reg <- unique(modelLookup()[modelLookup()$forReg,c(1)])
+m <- intersect(cla,reg)
 
 # slow classification models ("rbf" crashes; "dwdLinear", "ownn", "snn" have issues)
 # all others may have just failed and are not listed here
@@ -19,7 +19,7 @@ ToFixModels <- c("AdaBoost.M1","pda2","dwdRadial","rbf","dwdLinear", "dwdPoly",
                  "null", "randomGLM", "xgbDART", "bam")
 
 #remove all slow and failed models from model list
-(m <- m[!m %in% ToFixModels])
+m <- m[!m %in% ToFixModels]
 
 # pre-load all packages (does not really work due to other dependencies)
 suppressPackageStartupMessages(ll <-lapply(m, require, character.only = TRUE))
@@ -88,7 +88,7 @@ for (i in 1:length(t2)) {
 df1 <- data.frame(x1,x2,x3,x4,x5, stringsAsFactors=FALSE)
 
 # print all results to R-GUI
-df1
+# df1
 
 # plot models, just as example
 # ggplot(t2[[1]])
