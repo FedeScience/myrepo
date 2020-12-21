@@ -3,7 +3,8 @@ require(caret)
 require(mlbench)
 require(DT)
 
-data(iris) 
+#data(iris) 
+data(cars)
 cla <- unique(modelLookup()[modelLookup()$forClass,c(1)])
 reg <- unique(modelLookup()[modelLookup()$forReg,c(1)])
 m <- intersect(cla,reg)
@@ -113,5 +114,5 @@ df1 <- data.frame(x1,x2,x3,x4,x5, stringsAsFactors=FALSE)
 #   )
 
 # print confusion matrix example
-caret::confusionMatrix(t2[[1]])
+# caret::confusionMatrix(t2[[1]])
 

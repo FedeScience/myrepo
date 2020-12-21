@@ -13,23 +13,23 @@ require(caret); require(DT);  data(cars);
 m <- unique(modelLookup()[modelLookup()$forReg,c(1)])
 
 # fill variable m with the fast working models  
-m <- c("avNNet", "bagEarth", "bagEarthGCV", 
-"bayesglm", "bdk", "blackboost", "Boruta", "brnn", "BstLm" , 
-"bstTree", "cforest", "ctree", "ctree2", "cubist", "DENFIS", 
-"dnn", "earth", "elm", "enet",   "evtree", 
-"extraTrees",  "gamLoess",  "gaussprLinear", "gaussprPoly", "gaussprRadial", 
-"gcvEarth","glm", "glmboost", "glmnet", "icr", "kernelpls", 
-"kknn", "knn",  "krlsRadial", "lars" , "lasso", 
-"leapBackward", "leapForward", "leapSeq", "lm", "M5", "M5Rules", 
-"mlpWeightDecay", "neuralnet" , "partDSA", 
-"pcaNNet", "pcr", "penalized", "pls", "plsRglm", "ppr", 
-"qrf" , "ranger",  "rf", "rfRules", "rbfDDA",
-"ridge", "rlm", "rpart", "rpart2", "rqlasso", 
-"rqnc", "RRF", "RRFglobal",  "rvmPoly", "rvmRadial", 
-"SBC", "simpls", "spls", "superpc" , 
-"svmLinear", "svmLinear2", "svmPoly", "svmRadial", "svmRadialCost", 
-"treebag", "widekernelpls", "WM", "xgbLinear", 
-"xgbTree", "xyf")
+# m <- c("avNNet", "bagEarth", "bagEarthGCV", 
+# "bayesglm", "bdk", "blackboost", "Boruta", "brnn", "BstLm" , 
+# "bstTree", "cforest", "ctree", "ctree2", "cubist", "DENFIS", 
+# "dnn", "earth", "elm", "enet",   "evtree", 
+# "extraTrees",  "gamLoess",  "gaussprLinear", "gaussprPoly", "gaussprRadial", 
+# "gcvEarth","glm", "glmboost", "glmnet", "icr", "kernelpls", 
+# "kknn", "knn",  "krlsRadial", "lars" , "lasso", 
+# "leapBackward", "leapForward", "leapSeq", "lm", "M5", "M5Rules", 
+# "mlpWeightDecay", "neuralnet" , "partDSA", 
+# "pcaNNet", "pcr", "penalized", "pls", "plsRglm", "ppr", 
+# "qrf" , "ranger",  "rf", "rfRules", "rbfDDA",
+# "ridge", "rlm", "rpart", "rpart2", "rqlasso", 
+# "rqnc", "RRF", "RRFglobal",  "rvmPoly", "rvmRadial", 
+# "SBC", "simpls", "spls", "superpc" , 
+# "svmLinear", "svmLinear2", "svmPoly", "svmRadial", "svmRadialCost", 
+# "treebag", "widekernelpls", "WM", "xgbLinear", 
+# "xgbTree", "xyf")
  
  
 # load all packages (does not really work due to other dependencies)
@@ -41,13 +41,30 @@ y <- mtcars$mpg; x <- mtcars[, -mtcars$mpg];
 # load all libraries
 library(doParallel); cl <- makeCluster(detectCores()); registerDoParallel(cl)
 
-# use lapply/loop to run everything
-t2 <- lapply(m,function(i) 
-	{cat("----------------------------------------------------","\n");
-	set.seed(123); cat(i," <- loaded\n");
-	t2 <- train(y=y, x=x, (i), trControl = trainControl(method = "boot632"))
-	}
-)
+# this setup actually calls the caret::train function, in order to provide
+# minimal error handling this type of construct is needed.
+trainCall <- function(i) 
+{
+  cat("----------------------------------------------------","\n");
+  set.seed(123); cat(i," <- loaded\n");
+  return(tryCatch(
+    t2 <- train(y=y, x=x, (i), trControl = trainControl(method = "boot632")),
+    error=function(e) NULL))
+}
+
+# use lapply/loop to run everything, required for try/catch error function to work
+t2 <- lapply(m, trainCall)
+
+#remove NULL values, we only allow succesful methods, provenance is deleted.
+t2 <- t2[!sapply(t2, is.null)]
+
+# # use lapply/loop to run everything
+# t2 <- lapply(m,function(i) 
+# 	{cat("----------------------------------------------------","\n");
+# 	set.seed(123); cat(i," <- loaded\n");
+# 	t2 <- train(y=y, x=x, (i), trControl = trainControl(method = "boot632"))
+# 	}
+# )
 
 # use lapply to print the results
 r2 <- lapply(1:length(t2), function(i) 
@@ -82,25 +99,25 @@ for (i in 1:length(t2)) {
 df1 <- data.frame(x1,x2,x3,x4,x5, stringsAsFactors=FALSE)
 
 # print all results to R-GUI
-df1
+# df1
 
 # call web browser output with sortable column names
-datatable(df1,  options = list(
-		columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
-		pageLength = MAX,
-  		order = list(list(2, 'desc'))),
-		colnames = c('Num', 'Name', 'R^2', 'RMSE', 'time [s]', 'Model name'),
-	        caption = paste('Regression results from caret models',Sys.time()),
-	        class = 'cell-border stripe')  %>% 	       
-	        formatRound('x2', 3) %>%  
-	        formatRound('x3', 3) %>%
-	        formatRound('x4', 3) %>%
-		    formatStyle(2,
-		    background = styleColorBar(x2, 'steelblue'),
-		    backgroundSize = '100% 90%',
-		    backgroundRepeat = 'no-repeat',
-		    backgroundPosition = 'center'
-)
+# datatable(df1,  options = list(
+# 		columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
+# 		pageLength = MAX,
+#   		order = list(list(2, 'desc'))),
+# 		colnames = c('Num', 'Name', 'R^2', 'RMSE', 'time [s]', 'Model name'),
+# 	        caption = paste('Regression results from caret models',Sys.time()),
+# 	        class = 'cell-border stripe')  %>% 	       
+# 	        formatRound('x2', 3) %>%  
+# 	        formatRound('x3', 3) %>%
+# 	        formatRound('x4', 3) %>%
+# 		    formatStyle(2,
+# 		    background = styleColorBar(x2, 'steelblue'),
+# 		    backgroundSize = '100% 90%',
+# 		    backgroundRepeat = 'no-repeat',
+# 		    backgroundPosition = 'center'
+# )
 
 ### END
 

@@ -15,7 +15,7 @@ dim(iris)
 
 # get all model names for classification
 m <- unique(modelLookup()[modelLookup()$forClass,c(1)])
-length(m); m;
+# length(m); m;
 
 # slow classification models ("rbf" crashes; "dwdLinear", "ownn", "snn" have issues)
 # all others may have just failed and are not listed here
@@ -29,7 +29,7 @@ m <- m[!m %in% removeModels]
 suppressPackageStartupMessages(ll <-lapply(m, require, character.only = TRUE))
 
 # show which libraries were loaded  
-sessionInfo()
+# sessionInfo()
 
 # load X and Y (this will be transferred to to train function)
 X = iris[,1:3]
@@ -95,32 +95,32 @@ for (i in 1:length(t2)) {
 df1 <- data.frame(x1,x2,x3,x4,x5, stringsAsFactors=FALSE)
 
 # print all results to R-GUI
-df1
+# df1
 
 # plot models, just as example
 # ggplot(t2[[1]])
 # ggplot(t2[[1]])
 
 # call web output with correct column names
-datatable(df1,  options = list(
-		columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
-		pageLength = MAX,
-  		order = list(list(2, 'desc'))),
-		colnames = c('Num', 'Name', 'Accuracy', 'Kappa', 'time [s]', 'Model name'),
-	        caption = paste('Classification results from caret models',Sys.time()),
-	        class = 'cell-border stripe')  %>% 	       
-	        formatRound('x2', 3) %>%  
-	        formatRound('x3', 3) %>%
-	        formatRound('x4', 3) %>%
-		    formatStyle(2,
-		    background = styleColorBar(x2, 'steelblue'),
-		    backgroundSize = '100% 90%',
-		    backgroundRepeat = 'no-repeat',
-		    backgroundPosition = 'center'
-)
+# datatable(df1,  options = list(
+# 		columnDefs = list(list(className = 'dt-left', targets = c(0,1,2,3,4,5))),
+# 		pageLength = MAX,
+#   		order = list(list(2, 'desc'))),
+# 		colnames = c('Num', 'Name', 'Accuracy', 'Kappa', 'time [s]', 'Model name'),
+# 	        caption = paste('Classification results from caret models',Sys.time()),
+# 	        class = 'cell-border stripe')  %>% 	       
+# 	        formatRound('x2', 3) %>%  
+# 	        formatRound('x3', 3) %>%
+# 	        formatRound('x4', 3) %>%
+# 		    formatStyle(2,
+# 		    background = styleColorBar(x2, 'steelblue'),
+# 		    backgroundSize = '100% 90%',
+# 		    backgroundRepeat = 'no-repeat',
+# 		    backgroundPosition = 'center'
+# )
 
 # print confusion matrix example
-caret::confusionMatrix(t2[[1]])
+# caret::confusionMatrix(t2[[1]])
 
 
 ### END
