@@ -9,10 +9,10 @@ system.time(ans2 <- fsort(x))
 identical(ans1, ans2)
 # Sun Apr 26 21:55:04 2020 ------------------------------
 # Create a Parallel Socket Cluster
-library(Parallel)
-makeCluster(spec, type, ...)
-makePSOCKcluster(names, ...)
-makeForkCluster(nnodes = getOption("mc.cores", 2L), ...)
+library(parallel)
+# makeCluster(spec, type, ...)
+# makePSOCKcluster(names, ...)
+# makeForkCluster(nnodes = getOption("mc.cores", 2L), ...)
 
 
 getDefaultCluster()
