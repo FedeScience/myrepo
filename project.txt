@@ -1,0 +1,19 @@
+Phone:>Google:>Git:>Social
+
+Git::
+  Genetic Programming
+    random program to execute as follows
+  ML Pipeline
+    (clustering->classification->regression)->reinforcement
+  Site
+    (Wordpress|Gatsby)->Git->ECDN
+
+
+ML Pipeline
+Unsupervised
+clustering     ~ identify groups / identify anomalies
+Supervised
+regression     ~ calculate trajectories
+classification ~ identify objects
+Action
+reinforcement  ~ associate moves to environment
