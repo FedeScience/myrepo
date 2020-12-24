@@ -1,0 +1,16 @@
+Warning in install.packages :
+  cannot create file '/usr/share/R/doc/html/packages.html', reason 'Permesso negato'
+Warning in install.packages :
+  cannot update HTML package index
+  
+mv: impossibile spostare '/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/bayesplot' in '/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/00LOCK-bayesplot/bayesplot': Permesso negato
+ERROR: cannot remove earlier installation, is it in use?
+* removing ‘/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/bayesplot’
+Warning in install.packages :
+  installation of package ‘bayesplot’ had non-zero exit status
+  
+mv: impossibile spostare '/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/zoo' in '/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/00LOCK-zoo/zoo': Permesso negato
+ERROR: cannot remove earlier installation, is it in use?
+* removing ‘/home/ziobilly/Documenti/packrat/lib/x86_64-pc-linux-gnu/3.6.1/zoo’
+Warning in install.packages :
+  installation of package ‘zoo’ had non-zero exit status

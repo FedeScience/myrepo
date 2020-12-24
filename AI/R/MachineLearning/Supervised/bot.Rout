@@ -1,0 +1,238 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R è un software libero ed è rilasciato SENZA ALCUNA GARANZIA.
+Siamo ben lieti se potrai redistribuirlo, ma sotto certe condizioni.
+Scrivi 'license()' o 'licence()' per dettagli su come distribuirlo.
+
+R è un progetto di collaborazione con molti contributi esterni.
+Scrivi 'contributors()' per maggiori informazioni e 'citation()'
+per sapere come citare R o i pacchetti di R nelle pubblicazioni.
+
+Scrivi 'demo()' per una dimostrazione, 'help()' per la guida in linea, o
+'help.start()' per l'help navigabile con browser HTML.
+Scrivi 'q()' per uscire da R.
+
+[Caricato workspace precedentemente salvato]
+
+> 
+> require(caret)
+Carico il pacchetto richiesto: caret
+Carico il pacchetto richiesto: lattice
+Carico il pacchetto richiesto: ggplot2
+> require(mlbench)
+Carico il pacchetto richiesto: mlbench
+> require(DT)
+Carico il pacchetto richiesto: DT
+> 
+> data(iris) 
+> (cla <- unique(modelLookup()[modelLookup()$forClass,c(1)]))
+  [1] "ada"                 "AdaBag"              "adaboost"           
+  [4] "AdaBoost.M1"         "amdai"               "avNNet"             
+  [7] "awnb"                "awtan"               "bag"                
+ [10] "bagEarth"            "bagEarthGCV"         "bagFDA"             
+ [13] "bagFDAGCV"           "bam"                 "bartMachine"        
+ [16] "bayesglm"            "binda"               "blackboost"         
+ [19] "BstLm"               "bstSm"               "bstTree"            
+ [22] "C5.0"                "C5.0Cost"            "C5.0Rules"          
+ [25] "C5.0Tree"            "cforest"             "chaid"              
+ [28] "CSimca"              "ctree"               "ctree2"             
+ [31] "dda"                 "deepboost"           "dnn"                
+ [34] "dwdLinear"           "dwdPoly"             "dwdRadial"          
+ [37] "earth"               "elm"                 "evtree"             
+ [40] "extraTrees"          "fda"                 "FH.GBML"            
+ [43] "FRBCS.CHI"           "FRBCS.W"             "gam"                
+ [46] "gamboost"            "gamLoess"            "gamSpline"          
+ [49] "gaussprLinear"       "gaussprPoly"         "gaussprRadial"      
+ [52] "gbm"                 "gbm_h2o"             "gcvEarth"           
+ [55] "glm"                 "glmboost"            "glmnet"             
+ [58] "glmnet_h2o"          "glmStepAIC"          "gpls"               
+ [61] "hda"                 "hdda"                "hdrda"              
+ [64] "J48"                 "JRip"                "kernelpls"          
+ [67] "kknn"                "knn"                 "lda"                
+ [70] "lda2"                "Linda"               "LMT"                
+ [73] "loclda"              "logicBag"            "LogitBoost"         
+ [76] "logreg"              "lssvmLinear"         "lssvmPoly"          
+ [79] "lssvmRadial"         "lvq"                 "manb"               
+ [82] "mda"                 "Mlda"                "mlp"                
+ [85] "mlpKerasDecay"       "mlpKerasDecayCost"   "mlpKerasDropout"    
+ [88] "mlpKerasDropoutCost" "mlpML"               "mlpSGD"             
+ [91] "mlpWeightDecay"      "mlpWeightDecayML"    "monmlp"             
+ [94] "msaenet"             "multinom"            "mxnet"              
+ [97] "mxnetAdam"           "naive_bayes"         "nb"                 
+[100] "nbDiscrete"          "nbSearch"            "nnet"               
+[103] "nodeHarvest"         "null"                "OneR"               
+[106] "ordinalNet"          "ordinalRF"           "ORFlog"             
+[109] "ORFpls"              "ORFridge"            "ORFsvm"             
+[112] "ownn"                "pam"                 "parRF"              
+[115] "PART"                "partDSA"             "pcaNNet"            
+[118] "pda"                 "pda2"                "PenalizedLDA"       
+[121] "plr"                 "pls"                 "plsRglm"            
+[124] "polr"                "PRIM"                "protoclass"         
+[127] "qda"                 "QdaCov"              "randomGLM"          
+[130] "ranger"              "rbf"                 "rbfDDA"             
+[133] "Rborist"             "rda"                 "regLogistic"        
+[136] "rf"                  "rFerns"              "RFlda"              
+[139] "rfRules"             "rlda"                "rmda"               
+[142] "rocc"                "rotationForest"      "rotationForestCp"   
+[145] "rpart"               "rpart1SE"            "rpart2"             
+[148] "rpartCost"           "rpartScore"          "RRF"                
+[151] "RRFglobal"           "rrlda"               "RSimca"             
+[154] "sda"                 "sdwd"                "simpls"             
+[157] "SLAVE"               "slda"                "smda"               
+[160] "snn"                 "sparseLDA"           "spls"               
+[163] "stepLDA"             "stepQDA"             "svmBoundrangeString"
+[166] "svmExpoString"       "svmLinear"           "svmLinear2"         
+[169] "svmLinear3"          "svmLinearWeights"    "svmLinearWeights2"  
+[172] "svmPoly"             "svmRadial"           "svmRadialCost"      
+[175] "svmRadialSigma"      "svmRadialWeights"    "svmSpectrumString"  
+[178] "tan"                 "tanSearch"           "treebag"            
+[181] "vbmpRadial"          "vglmAdjCat"          "vglmContRatio"      
+[184] "vglmCumulative"      "widekernelpls"       "wsrf"               
+[187] "xgbDART"             "xgbLinear"           "xgbTree"            
+[190] "xyf"                
+> (reg <- unique(modelLookup()[modelLookup()$forReg,c(1)]))
+  [1] "ANFIS"               "avNNet"              "bag"                
+  [4] "bagEarth"            "bagEarthGCV"         "bam"                
+  [7] "bartMachine"         "bayesglm"            "blackboost"         
+ [10] "blasso"              "blassoAveraged"      "bridge"             
+ [13] "brnn"                "BstLm"               "bstSm"              
+ [16] "bstTree"             "cforest"             "ctree"              
+ [19] "ctree2"              "cubist"              "DENFIS"             
+ [22] "dnn"                 "earth"               "elm"                
+ [25] "enet"                "evtree"              "extraTrees"         
+ [28] "FIR.DM"              "foba"                "FS.HGD"             
+ [31] "gam"                 "gamboost"            "gamLoess"           
+ [34] "gamSpline"           "gaussprLinear"       "gaussprPoly"        
+ [37] "gaussprRadial"       "gbm"                 "gbm_h2o"            
+ [40] "gcvEarth"            "GFS.FR.MOGUL"        "GFS.LT.RS"          
+ [43] "GFS.THRIFT"          "glm"                 "glm.nb"             
+ [46] "glmboost"            "glmnet"              "glmnet_h2o"         
+ [49] "glmStepAIC"          "HYFIS"               "icr"                
+ [52] "kernelpls"           "kknn"                "knn"                
+ [55] "krlsPoly"            "krlsRadial"          "lars"               
+ [58] "lars2"               "lasso"               "leapBackward"       
+ [61] "leapForward"         "leapSeq"             "lm"                 
+ [64] "lmStepAIC"           "logicBag"            "logreg"             
+ [67] "M5"                  "M5Rules"             "mlp"                
+ [70] "mlpKerasDecay"       "mlpKerasDropout"     "mlpML"              
+ [73] "mlpSGD"              "mlpWeightDecay"      "mlpWeightDecayML"   
+ [76] "monmlp"              "msaenet"             "mxnet"              
+ [79] "mxnetAdam"           "neuralnet"           "nnet"               
+ [82] "nnls"                "nodeHarvest"         "null"               
+ [85] "parRF"               "partDSA"             "pcaNNet"            
+ [88] "pcr"                 "penalized"           "pls"                
+ [91] "plsRglm"             "ppr"                 "qrf"                
+ [94] "qrnn"                "randomGLM"           "ranger"             
+ [97] "rbf"                 "rbfDDA"              "Rborist"            
+[100] "relaxo"              "rf"                  "rfRules"            
+[103] "ridge"               "rlm"                 "rpart"              
+[106] "rpart1SE"            "rpart2"              "rqlasso"            
+[109] "rqnc"                "RRF"                 "RRFglobal"          
+[112] "rvmLinear"           "rvmPoly"             "rvmRadial"          
+[115] "SBC"                 "simpls"              "spikeslab"          
+[118] "spls"                "superpc"             "svmBoundrangeString"
+[121] "svmExpoString"       "svmLinear"           "svmLinear2"         
+[124] "svmLinear3"          "svmPoly"             "svmRadial"          
+[127] "svmRadialCost"       "svmRadialSigma"      "svmSpectrumString"  
+[130] "treebag"             "widekernelpls"       "WM"                 
+[133] "xgbDART"             "xgbLinear"           "xgbTree"            
+[136] "xyf"                
+> (m <- intersect(cla,reg))
+ [1] "avNNet"              "bag"                 "bagEarth"           
+ [4] "bagEarthGCV"         "bam"                 "bartMachine"        
+ [7] "bayesglm"            "blackboost"          "BstLm"              
+[10] "bstSm"               "bstTree"             "cforest"            
+[13] "ctree"               "ctree2"              "dnn"                
+[16] "earth"               "elm"                 "evtree"             
+[19] "extraTrees"          "gam"                 "gamboost"           
+[22] "gamLoess"            "gamSpline"           "gaussprLinear"      
+[25] "gaussprPoly"         "gaussprRadial"       "gbm"                
+[28] "gbm_h2o"             "gcvEarth"            "glm"                
+[31] "glmboost"            "glmnet"              "glmnet_h2o"         
+[34] "glmStepAIC"          "kernelpls"           "kknn"               
+[37] "knn"                 "logicBag"            "logreg"             
+[40] "mlp"                 "mlpKerasDecay"       "mlpKerasDropout"    
+[43] "mlpML"               "mlpSGD"              "mlpWeightDecay"     
+[46] "mlpWeightDecayML"    "monmlp"              "msaenet"            
+[49] "mxnet"               "mxnetAdam"           "nnet"               
+[52] "nodeHarvest"         "null"                "parRF"              
+[55] "partDSA"             "pcaNNet"             "pls"                
+[58] "plsRglm"             "randomGLM"           "ranger"             
+[61] "rbf"                 "rbfDDA"              "Rborist"            
+[64] "rf"                  "rfRules"             "rpart"              
+[67] "rpart1SE"            "rpart2"              "RRF"                
+[70] "RRFglobal"           "simpls"              "spls"               
+[73] "svmBoundrangeString" "svmExpoString"       "svmLinear"          
+[76] "svmLinear2"          "svmLinear3"          "svmPoly"            
+[79] "svmRadial"           "svmRadialCost"       "svmRadialSigma"     
+[82] "svmSpectrumString"   "treebag"             "widekernelpls"      
+[85] "xgbDART"             "xgbLinear"           "xgbTree"            
+[88] "xyf"                
+> 
+> # slow classification models ("rbf" crashes; "dwdLinear", "ownn", "snn" have issues)
+> # all others may have just failed and are not listed here
+> ToFixModels <- c("AdaBoost.M1","pda2","dwdRadial","rbf","dwdLinear", "dwdPoly",
++                  "gaussprLinear","gaussprPoly","rFerns","sddaLDA", "smda", "sddaQDA",
++                  "xgbLinear", "mlpKerasDropout", "bartMachine", "blackboost", "bag",
++                  "elm", "extraTrees", "gamboost", "glmboost", "glm", "gbm_h2o" ,
++                  "logreg", "mlpKerasDecay", "plsRglm", "nodeHarvest", "glmnet_h2o",
++                  "glmStepAIC", "msaenet", "logicBag", "mlpSGD", "mxnet", "mxnetAdam",
++                  "null", "randomGLM")
+> 
+> #remove all slow and failed models from model list
+> (m <- m[!m %in% ToFixModels])
+ [1] "avNNet"              "bagEarth"            "bagEarthGCV"        
+ [4] "bam"                 "bayesglm"            "BstLm"              
+ [7] "bstSm"               "bstTree"             "cforest"            
+[10] "ctree"               "ctree2"              "dnn"                
+[13] "earth"               "evtree"              "gam"                
+[16] "gamLoess"            "gamSpline"           "gaussprRadial"      
+[19] "gbm"                 "gcvEarth"            "glmnet"             
+[22] "kernelpls"           "kknn"                "knn"                
+[25] "mlp"                 "mlpML"               "mlpWeightDecay"     
+[28] "mlpWeightDecayML"    "monmlp"              "nnet"               
+[31] "parRF"               "partDSA"             "pcaNNet"            
+[34] "pls"                 "ranger"              "rbfDDA"             
+[37] "Rborist"             "rf"                  "rfRules"            
+[40] "rpart"               "rpart1SE"            "rpart2"             
+[43] "RRF"                 "RRFglobal"           "simpls"             
+[46] "spls"                "svmBoundrangeString" "svmExpoString"      
+[49] "svmLinear"           "svmLinear2"          "svmLinear3"         
+[52] "svmPoly"             "svmRadial"           "svmRadialCost"      
+[55] "svmRadialSigma"      "svmSpectrumString"   "treebag"            
+[58] "widekernelpls"       "xgbDART"             "xgbTree"            
+[61] "xyf"                
+> 
+> # pre-load all packages (does not really work due to other dependencies)
+> suppressPackageStartupMessages(ll <-lapply(m, require, character.only = TRUE))
+There were 47 warnings (use warnings() to see them)
+> 
+> # load X and Y (this will be transferred to to train function)
+> X = iris[,1:3]
+> Y = iris$Species
+> 
+> # register parallel front-end
+> library(doParallel); cl <- makeCluster(detectCores()); registerDoParallel(cl)
+Carico il pacchetto richiesto: iterators
+Carico il pacchetto richiesto: parallel
+> 
+> # this setup actually calls the caret::train function, in order to provide
+> # minimal error handling this type of construct is needed.
+> trainCall <- function(i) 
++ {
++   cat("----------------------------------------------------","\n");
++   set.seed(123); cat(i," <- loaded\n");
++   return(tryCatch(
++     t2 <- train(y=Y, x=X, (i), trControl = trainControl(method = "boot632")),
++     error=function(e) NULL))
++ }
+> 
+> # use lapply/loop to run everything, required for try/catch error function to work
+> t2 <- lapply(m, trainCall)
+---------------------------------------------------- 
+avNNet  <- loaded
+---------------------------------------------------- 
+bagEarth  <- loaded
